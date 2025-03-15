@@ -8,16 +8,25 @@
 <body>
     <script>
 
-        function moyenne(obj) {
+        function moyenne(students) {
             let somme = 0
-            for (note in obj.notes) {
-                somme += obj.notes[note]
+            for (note in students.notes) {
+                somme += students.notes[note]
             }
-            obj.moyenne = somme/obj.notes.length
+            students.moyenne = somme/students.notes.length
         }
 
         function studentSort (students) {
-            
+            for (let i = 0; i< students.length; i++) {
+                for (let j = 0 ; j < students.length - i - 1; j++) {
+                    if (students[j].moyenne < students[j+1].moyenne) {
+                        c = students[j]
+                        students[j] = students[j+1]
+                        students[j+1] = c
+                    }
+                }
+            }
+            return students
         }
 
         const students = [
@@ -45,6 +54,7 @@
         for (let i = 0; i< students.length; i++) {
             moyenne(students[i])
         }
+        studentSort(students)
         console.log(students)
 
 
