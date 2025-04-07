@@ -16,7 +16,9 @@
             Saisissez votre date de naisance : 
             <input type="date" name="dateNaiss" id="dateNaiss">
         </label>
+        <br>
         <input type="reset" value="Réinitialiser">
+        <br>
         <input type="submit" value="Envoyer"></input>
     </form>
 </body>
